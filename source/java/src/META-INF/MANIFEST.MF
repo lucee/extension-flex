@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Export-Package: org.lucee.extension.amf
 Bundle-ManifestVersion: 2
-Require-Bundle: flex.messaging.common;bundle-version=3.3.0.22497,
- flex.messaging.core;bundle-version=3.3.0.22497,
+Require-Bundle: flex.messaging.common;bundle-version=3.3.0.224970002L,
+ flex.messaging.core;bundle-version=3.3.0.224970002L,
  flex.messaging.opt;bundle-version=3.3.0.22497,
  flex.messaging.proxy;bundle-version=3.3.0.22497,
  flex.messaging.remoting;bundle-version=3.3.0.22497,
- openamf.astranslator;bundle-version=1.5.8,
- openamf;bundle-version=1.5.8
+ openamf.astranslator;bundle-version=1.5.8.0001L,
+ openamf;bundle-version=1.5.8.0001L

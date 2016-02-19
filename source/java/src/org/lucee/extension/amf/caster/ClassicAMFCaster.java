@@ -106,8 +106,9 @@ public class ClassicAMFCaster implements AMFCaster {
 	}
 
 	protected Object toAMFObject(Node node) {
-		return engine.getXMLUtil().toRawNode(node);
+		return node;
 	}
+	
 	protected Object toAMFObject(Query query) throws PageException {
 		List<ASObject> result = new ArrayList<ASObject>();
 		int len=query.getRecordcount();
