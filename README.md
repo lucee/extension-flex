@@ -3,7 +3,7 @@ This extension can be built using ant (http://ant.apache.org/). It is not workin
 Sample addition to web.xml
 
 MessageBroker Servlet - Flex Gateway
-<![CDATA[
+```xml
 <!-- ===================================================================== -->
 <!-- Lucee MessageBroker Servlet - Flex Gateway                            -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -36,4 +36,4 @@ MessageBroker Servlet - Flex Gateway
   <url-pattern>/flashservices/gateway/*</url-pattern>
   <url-pattern>/messagebroker/*</url-pattern>
 </servlet-mapping>
-]]>
+```
