@@ -73,7 +73,7 @@ id: "${id}"
 name: "${label}"
 description: "${description}"
 lucee-core-version: "5.0.0.100"
-start-bundles: false
+start-bundles: true
 amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundleversion}${build.number}','caster':'modern','configuration':'manual'}"
 </echo>
 
@@ -85,7 +85,7 @@ amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundle
   <target name="compile" depends="copy"
         description="compile the source " >
     <!-- Compile ACF-Infinspan source -->
-    <javac srcdir="${temp}" target="1.7" destdir="${build}" debug="true" debuglevel="lines,vars,source">
+    <javac srcdir="${temp}" target="1.8" destdir="${build}" debug="true" debuglevel="lines,vars,source">
       <classpath refid="classpath" />
     </javac>
   </target>
