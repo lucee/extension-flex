@@ -7,4 +7,5 @@ Require-Bundle: flex.messaging.common;bundle-version=3.3.0.224970002L,
  flex.messaging.proxy;bundle-version=3.3.0.22497,
  flex.messaging.remoting;bundle-version=3.3.0.22497,
  openamf.astranslator;bundle-version=1.5.8.0001L,
- openamf;bundle-version=1.5.8.0001L
+ openamf;bundle-version=1.5.8.0001L,
+ org.jgroups;bundle-version=3.6.10.Final
