@@ -73,7 +73,7 @@ id: "${id}"
 name: "${label}"
 description: "${description}"
 lucee-core-version: "5.0.0.100"
-start-bundles: true
+start-bundles: false
 amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundleversion}${build.number}','caster':'modern','configuration':'manual'}"
 </echo>
 
