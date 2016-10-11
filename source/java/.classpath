@@ -3,16 +3,17 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/loader"/>
-	<classpathentry kind="lib" path="libs/opt-3.3.0.22497.jar"/>
-	<classpathentry kind="lib" path="libs/proxy-3.3.0.22497.jar"/>
-	<classpathentry kind="lib" path="libs/remoting-3.3.0.22497.jar"/>
 	<classpathentry kind="lib" path="libs/javax.el-api-3.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/javax.servlet-api-3.1.0.jar"/>
 	<classpathentry kind="lib" path="libs/jsp-api-2.2.jar"/>
-	<classpathentry kind="lib" path="libs/astranslator-1.5.8.jar"/>
-	<classpathentry kind="lib" path="libs/openamf-1-5-8-0001L.jar"/>
-	<classpathentry kind="lib" path="libs/openamf-astranslator-1-5-8-0001L.jar"/>
-	<classpathentry kind="lib" path="libs/flex-messaging-common-3-3-0-224970002L.jar"/>
-	<classpathentry kind="lib" path="libs/flex-messaging-core-3-3-0-224970002L.jar"/>
+	<classpathentry kind="lib" path="libs/flex.messaging.common-3-3-0-224970002L.jar"/>
+	<classpathentry kind="lib" path="libs/flex.messaging.core-3-3-0-224970002L.jar"/>
+	<classpathentry kind="lib" path="libs/flex.messaging.opt-3.3.0.22497.jar"/>
+	<classpathentry kind="lib" path="libs/flex.messaging.proxy-3.3.0.22497.jar"/>
+	<classpathentry kind="lib" path="libs/flex.messaging.remoting-3.3.0.22497.jar"/>
+	<classpathentry kind="lib" path="libs/lucee.jar"/>
+	<classpathentry kind="lib" path="libs/openamf-1.5.8.0001L.jar"/>
+	<classpathentry kind="lib" path="libs/openamf.astranslator-1.5.8.0001L.jar"/>
+	<classpathentry kind="lib" path="libs/org.jgroups-3.6.10.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
