@@ -128,6 +128,7 @@ public class ClassicAMFCaster implements AMFCaster {
 			return img.getImageBytes(null);
 		}
 		catch(Throwable t){
+			if(t instanceof ThreadDeath) throw (ThreadDeath)t;
 			return img.getImageBytes("png");
 		}
 	}*/
