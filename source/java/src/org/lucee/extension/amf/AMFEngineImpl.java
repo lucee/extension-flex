@@ -78,7 +78,6 @@ import org.openamf.util.OpenAMFUtilsTest;
 
 import flex.messaging.config.ConfigMap;
 
-
 /**
  * AMF Engine
  */
@@ -139,10 +138,10 @@ public final class AMFEngineImpl implements AMFEngine {
 			configType=CONFIG_TYPE_MANUAL;
 		
 		// init file context
-		createContext(config,configType);
+		//createContext(config,configType);
 	}
 	
-	private static void createContext(ConfigWeb config, int configType) throws IOException {
+	/*private static void createContext(ConfigWeb config, int configType) throws IOException {
 		if(configType==CONFIG_TYPE_XML) {
 		
 			String strPath = config.getServletContext().getRealPath("/WEB-INF");
@@ -159,15 +158,15 @@ public final class AMFEngineImpl implements AMFEngine {
 			f = new File(flex,"services-config.xml");
 			if (!f.exists()) createFile("/org/lucee/extension/amf/resources/services-config.xml", f);
 		}
-	}
+	}*/
 	
-	private static void createFile(String resource, File file) throws IOException {
+	/*private static void createFile(String resource, File file) throws IOException {
 		IO util = CFMLEngineFactory.getInstance().getIOUtil();
 		InputStream is = AMFUtil.class.getResourceAsStream(resource);
 		if(is==null) throw new IOException("file ["+resource+"] does not exist.");
 		file.createNewFile();
 		util.copy(is, new FileOutputStream(file), true, true);
-	}
+	}*/
 	
 
 
