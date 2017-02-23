@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="clean" basedir="." name="formtag-extension">
+<project default="clean" basedir="." name="flex">
 	<description>
-        Build Form Extension
+        Lucee Flex
     </description>
     <!-- set global properties for this build -->
   
   <property file="build.properties"/>
+  <buildnumber file="build.number"/>
+
 
   <property name="lib" location="source/java/libs"/>
   <property name="src" location="source/java/src"/>
-  <property name="srcImg" location="source/images"/>
+  <property name="res" location="source/resources"/>
   <property name="temp" location="temp"/>
   <property name="build" location="build"/>
   <property name="dist"  location="dist"/>
   
-  <buildnumber file="build.number"/>
 
   <scriptdef name="replace" language="javascript">
      <attribute name="haystack" />
@@ -61,29 +62,11 @@
       </fileset>
     </copy>
 
-
-    <tstamp>
-     <format property="NOW" pattern="yyyy-MM-dd HH:mm:ss" />
-    </tstamp>
-
-    <echo file="${dist}/extension/META-INF/MANIFEST.MF">Manifest-Version: 1.0
-Built-Date: ${NOW}
-version: "${bundleversion}${build.number}"
-id: "${id}"
-name: "${label}"
-description: "${description}"
-lucee-core-version: "5.0.0.100"
-start-bundles: false
-amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundleversion}${build.number}','caster':'modern','configuration':'manual'}"
-</echo>
-
-
   </target>
   
 
 
-  <target name="compile" depends="copy"
-        description="compile the source " >
+  <target name="compile" depends="copy" description="compile the source " >
     <!-- Compile ACF-Infinspan source -->
     <javac srcdir="${temp}" target="1.8" destdir="${build}" debug="true" debuglevel="lines,vars,source">
       <classpath refid="classpath" />
@@ -93,10 +76,13 @@ amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundle
   <target name="dist" depends="compile"
         description="generate the distribution" >
     
- 
+        <tstamp>
+     <format property="NOW" pattern="yyyy-MM-dd HH:mm:ss" />
+    </tstamp>
+
     <!-- Put everything in ${build} into .jar file -->
     <jar 
-    	jarfile="${dist}/extension/jars/${filename}-${bundleversion}${build.number}.jar" basedir="${build}"  manifest="${src}/META-INF/MANIFEST.MF">
+    	jarfile="${dist}/artifacts/jars/${filename}-${bundleversion}${build.number}.jar" basedir="${build}"  manifest="${src}/META-INF/MANIFEST.MF">
       <manifest>
         <attribute name="Bundle-Version" value="${bundleversion}${build.number}"/>
         <attribute name="Built-Date" value="${NOW}"/>
@@ -106,22 +92,8 @@ amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundle
     </jar>
 
 
-    <!-- copy the tlds necessary
-    <loadfile property="content1" srcFile="${tld}/formtag.tld" />
-    <replace haystack="${content1}" needle="{bundle-name}" repl="${bundlename}" property="content2"/>
-    <replace haystack="${content2}" needle="{bundle-version}" repl="${bundleversion}${build.number}" property="content3"/>
-    <echo message="${content3}"/>
-<echo message="${content3}" file="${dist}/extension/tlds/formtag.tld"/> -->
-
-    <!-- copy the context necessary
-    <copy todir="${dist}/extension/webcontexts">
-      <fileset dir="${context}">
-        <include name="**/*.*"/>
-      </fileset>
-    </copy> -->
-
     <!-- copy the jars necessary -->
-    <copy todir="${dist}/extension/jars">
+    <copy todir="${dist}/artifacts/jars">
       <fileset dir="${lib}">
         <include name="**/*.jar"/>
         <exclude name="**/javax.*"/>
@@ -130,26 +102,26 @@ amf: "{'class':'${class}','bundleName':'${bundlename}','bundleVersion':'${bundle
       </fileset>
     </copy>
 
-    <!-- copy the logo -->
-    <copy todir="${dist}/extension/META-INF">
-      <fileset dir="${srcImg}/">
-        <include name="logo.png"/>
+    <!-- copy the resources -->
+    <copy todir="${dist}/artifacts/resources">
+      <fileset dir="${res}">
+        <include name="**/*.xml"/>
       </fileset>
     </copy>
 
-
-
     <!-- Zip everything  -->
-     <zip destfile="${dist}/${filename}-${bundleversion}${build.number}.lex">
-        <zipfileset dir="${dist}/extension"/>
+     <zip destfile="${dist}/${filename}-${bundleversion}${build.number}.zip">
+        <zipfileset dir="${dist}/artifacts"/>
     </zip>
-		
+
+
   </target>
 
 	<target name="clean"  depends="dist" description="clean up" >
 		<!-- Delete the ${build} and ${dist} directory trees -->
 		<delete dir="${build}"/>
-		<delete dir="${temp}"/>
+    <delete dir="${temp}"/>
+    <delete dir="${dist}/artifacts"/>
 	</target>
 
 </project>
