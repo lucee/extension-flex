@@ -1,7 +1,7 @@
 ## Installation
 
-1. built the necessary artifacts by executing ant (http://ant.apache.org/) in the root of the project. This will create a zip file in the folder "dist"
-2. add the following to your web.xml (also named webdefault.xml or server.xml depending on the servlet engine used).
+- built the necessary artifacts by executing ant (http://ant.apache.org/) in the root of the project. This will create a zip file in the folder "dist"
+- add the following to your web.xml (also named webdefault.xml or server.xml depending on the servlet engine used).
 
 ```xml
 <!-- ===================================================================== -->
@@ -37,6 +37,6 @@
   <url-pattern>/messagebroker/*</url-pattern>
 </servlet-mapping>
 ```
-3. copy the jar files from the zip file (see #1) to your classpath ("libs" folder NOT to lucee-server/bundles!)
-4. copy the xml files from the zip file (see #1) to WEB-INF/flex of your webroot
-5. restart the servlet engine
+- copy the jar files from the zip file (see #1) to your classpath ("libs" folder NOT to lucee-server/bundles!)
+- copy the xml files from the zip file (see #1) to WEB-INF/flex of your webroot
+- restart the servlet engine
