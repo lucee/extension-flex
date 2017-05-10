@@ -91,7 +91,11 @@ public class CFMLProxy {
        try {
            cfc="/"+serviceName.replace('.','/')+".cfc";
            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-           pc=createPageContext(factory,cfc,"method="+serviceMethodName,baos,req);
+           String qs=req.getQueryString();
+           if(qs==null || qs.isEmpty()) qs="";
+           else qs+='&';
+           qs+="method="+serviceMethodName;
+           pc=createPageContext(factory,cfc,qs,baos,req);
            PageSource source = getPageSourceExisting(pc,cfc);
 
            parameters=caster.toCFMLObject(rawParams);
@@ -134,7 +138,10 @@ public class CFMLProxy {
        String cfml;
        try {
            cfml="/"+(serviceName.replace('.','/')+'/'+serviceMethodName.replace('.','/'))+".cfm";
-           pc=createPageContext(factory,cfml,"",null,req);
+           String qs=req.getQueryString();
+           if(qs==null) qs="";
+           
+           pc=createPageContext(factory,cfml,qs,null,req);
            PageSource source = getPageSourceExisting(pc,cfml);
            
            if(source!=null) {
