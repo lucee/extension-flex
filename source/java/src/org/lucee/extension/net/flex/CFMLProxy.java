@@ -91,16 +91,18 @@ public class CFMLProxy {
        try {
            cfc="/"+serviceName.replace('.','/')+".cfc";
            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+           
            String qs=req.getQueryString();
            if(qs==null || qs.isEmpty()) qs="";
            else qs+='&';
            qs+="method="+serviceMethodName;
+           
            pc=createPageContext(factory,cfc,qs,baos,req);
            PageSource source = getPageSourceExisting(pc,cfc);
 
            parameters=caster.toCFMLObject(rawParams);
        	if(source!=null) {
-       		print(pc,cfc+"?method="+serviceMethodName);
+       		print(pc,cfc+"?"+qs);
            	// Map
        			//print.err(parameters);
        		if(parameters instanceof Map){
@@ -120,7 +122,7 @@ public class CFMLProxy {
            	}
            	
                // Execute
-               pc.execute(cfc,true,false);
+               pc.executeCFML(cfc,true,false);
 
                // write back response
                writeBackResponse(pc,rsp);
@@ -152,7 +154,7 @@ public class CFMLProxy {
                params.setEL(PARAMS,parameters);
                
                // Execute
-               pc.execute(cfml,true,false);
+               pc.executeCFML(cfml,true,false);
                
                // write back response
                writeBackResponse(pc,rsp);
