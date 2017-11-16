@@ -1,3 +1,6 @@
+## Vulnerability
+There are some known vulnerability with the Flex Framework codebase, please educate yourself about it before using Flex in combination with Lueee.
+
 ## Installation
 
 - built the necessary artifacts by executing ant (http://ant.apache.org/) in the root of the project. This will create a zip file in the folder "dist"
