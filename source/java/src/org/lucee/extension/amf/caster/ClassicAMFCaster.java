@@ -216,7 +216,13 @@ public class ClassicAMFCaster implements AMFCaster {
 	@Override
 	public Object toCFMLObject(Object amf) throws PageException {
 		if(amf instanceof Node) return toCFMLObject((Node)amf);
-		if(amf instanceof List) return toCFMLObject((List)amf);
+		if(amf instanceof List) {
+			List l = (List)amf;
+			if(l.size() == 1 && l.get(0) instanceof ASObject){
+				return toCFMLObject((ASObject)l.get(0));
+			}
+			return toCFMLObject((List)amf);
+		}
 		if(engine.getDecisionUtil().isNativeArray(amf)) {
 			if(amf instanceof byte[]) return amf;
 			if(amf instanceof char[]) return new String((char[])amf);
