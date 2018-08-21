@@ -47,3 +47,4 @@ There are some known vulnerability with the Flex Framework codebase, please educ
 - Copy the XML files from the ZIP file resources directory to WEB-INF/flex of your webroot
 
 - Restart the servlet container (e.g. Tomcat, Jetty)
+
