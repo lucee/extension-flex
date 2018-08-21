@@ -3,7 +3,7 @@ There are some known vulnerability with the Flex Framework codebase, please educ
 
 ## Installation
 
-- Download the prebuilt ZIP file from [releases/tag/1.0.0.3](releases/tag/1.0.0.3).  Alternatively, you can build the artifacts yourself by running `ant` (http://ant.apache.org/) in the root of the project, which will create the ZIP file in the `dist` directory.
+- Download the prebuilt ZIP file from [https://github.com/lucee/extension-flex/releases/](https://github.com/lucee/extension-flex/releases/).  Alternatively, you can build the artifacts yourself by running `ant` (http://ant.apache.org/) in the root of the project, which will create the ZIP file in the `dist` directory.
 
 - Add the following to your deployment descriptor file, web.xml (named webdefault.xml in Jetty).
 
