@@ -3,8 +3,9 @@ There are some known vulnerability with the Flex Framework codebase, please educ
 
 ## Installation
 
-- built the necessary artifacts by executing ant (http://ant.apache.org/) in the root of the project. This will create a zip file in the folder "dist"
-- add the following to your web.xml (also named webdefault.xml or server.xml depending on the servlet engine used).
+- Download the prebuilt ZIP file from [releases/tag/1.0.0.3](releases/tag/1.0.0.3).  Alternatively, you can build the artifacts yourself by running `ant` (http://ant.apache.org/) in the root of the project, which will create the ZIP file in the `dist` directory.
+
+- Add the following to your deployment descriptor file, web.xml (named webdefault.xml in Jetty).
 
 ```xml
 <!-- ===================================================================== -->
@@ -40,6 +41,9 @@ There are some known vulnerability with the Flex Framework codebase, please educ
   <url-pattern>/messagebroker/*</url-pattern>
 </servlet-mapping>
 ```
-- copy the jar files from the zip file (see #1) to your classpath ("libs" folder NOT to lucee-server/bundles!)
-- copy the xml files from the zip file (see #1) to WEB-INF/flex of your webroot
-- restart the servlet engine
+
+- Copy the JAR files from the ZIP file jars directory to your classpath, e.g. the same directory where the primary Lucee JAR file is saved (NOT to the bundles directory!)
+
+- Copy the XML files from the ZIP file resources directory to WEB-INF/flex of your webroot
+
+- Restart the servlet container (e.g. Tomcat, Jetty)
