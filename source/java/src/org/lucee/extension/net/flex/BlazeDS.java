@@ -52,7 +52,7 @@ public class BlazeDS {
 					FlexContext.getServletConfig(), 
 					FlexContext.getHttpRequest(), 
 					FlexContext.getHttpResponse(), 
-					remotingMessage.getSource(), 
+					remotingMessage.getDestination(), 
 					remotingMessage.getOperation(), 
 					remotingMessage.getParameters());
 			
